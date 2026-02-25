@@ -1,0 +1,32 @@
+It's a good start but missing a few important things for your specific project. Here's a more complete version:
+gitignore# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+
+# Environment variables
+.env
+.env.local
+
+# Data files - too large for GitHub
+data/
+*.csv
+*.jsonl
+*.json
+
+# Trained models - too large for GitHub
+models/
+*.joblib
+*.pt
+*.pkl
+
+# Outputs
+outputs/

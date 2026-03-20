@@ -4,11 +4,10 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.ensemble import RandomForestRegressor
 from pricer.evaluator import evaluate
 from pricer.items import Item
 #import xgboost as xgb
-train, val, test = Item.from_hub("lesserafimlover/items_lite")
+train, val, test = Item.from_hub("lesserafimlover/items")
 #Random pricer baseline
 def random_pricer(item):
     return random.randrange(1,1000)
@@ -44,4 +43,4 @@ def random_forest(item):
 
 
 if __name__ == "__main__":
-    print(test[0].summary)
+    evaluate(random_forest,test)

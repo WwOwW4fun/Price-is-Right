@@ -17,7 +17,7 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 load_dotenv(override=True)
 hf_token = os.environ['HF_TOKEN']
 login(hf_token, add_to_git_credential=True)
-train, val, test = Item.from_hub("ed-donner/items_lite")
+train, val, test = Item.from_hub("lesserafimlover/items")
 
 # Prepare our documents and prices
 
@@ -102,4 +102,5 @@ def neural_network(item):
         result = model(vector)[0].item()
     return max(0, result)
 
-evaluate(neural_network, test)
+if __name__ == "__main__":
+    evaluate(neural_network,test)

@@ -54,8 +54,8 @@ for item in items:
 train = items[:20_000]
 val   = items[20_000:21_000]
 test  = items[21_000:]
-Item.push_to_hub(f"lesserafimlover/items", train, val, test)
+Item.push_to_hub(f"lesserafimlover/items_lite", train, val, test)
 
 if __name__ == "__main__":
    missing = [item for item in items if not item.summary]
-   print(f"Items with missing summaries: {len(missing)}")
+   print(f"Items with missing summaries: {len(missing)}") 

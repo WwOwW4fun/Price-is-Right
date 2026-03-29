@@ -14,7 +14,7 @@ class NeuralNetworkAgent(Agent):
         self.log("Neural Network Agent is initializing")
         self.neural_network = DeepNeuralNetworkInference()
         self.neural_network.setup()
-        self.neural_network.load("deep_neural_network.pth")
+        self.neural_network.load("src/agents/deep_neural_network.pth")
         self.log("Neural Network Agent is ready and weights are loaded")
 
     def price(self, description: str) -> float:

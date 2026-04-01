@@ -1,3 +1,4 @@
+from pathlib import Path
 from agents.agent import Agent
 from agents.deep_neural_network import DeepNeuralNetworkInference
 
@@ -5,6 +6,7 @@ from agents.deep_neural_network import DeepNeuralNetworkInference
 class NeuralNetworkAgent(Agent):
     name = "Neural Network Agent"
     color = Agent.MAGENTA
+    MODEL_PATH = Path(__file__).resolve().with_name("deep_neural_network.pth")
 
     def __init__(self):
         """
@@ -14,7 +16,7 @@ class NeuralNetworkAgent(Agent):
         self.log("Neural Network Agent is initializing")
         self.neural_network = DeepNeuralNetworkInference()
         self.neural_network.setup()
-        self.neural_network.load("src/agents/deep_neural_network.pth")
+        self.neural_network.load(str(self.MODEL_PATH))
         self.log("Neural Network Agent is ready and weights are loaded")
 
     def price(self, description: str) -> float:

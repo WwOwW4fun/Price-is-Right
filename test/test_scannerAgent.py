@@ -5,6 +5,7 @@ from agents.deals import ScrapedDeal, DealSelection
 import logging
 import requests
 from agents.scanner_agent import ScannerAgent
+
 load_dotenv(override=True)
 openai = OpenAI()
 MODEL = 'gpt-5-mini'
